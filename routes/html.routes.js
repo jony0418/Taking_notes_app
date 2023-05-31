@@ -1,26 +1,14 @@
-// const path = require("path");
+const path = require("path");
 
-// module.exports = (app) => {
-//   app.get("/notes", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/notes.html"));
-//   });
+console.log('html.routes.js is being run');
 
-//   app.get("*", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/index.html"));
-//   });
-// };
+module.exports = (app) => {
+  app.get("/notes", function(req, res) {
+    res.sendFile(path.join(__dirname, "./public/notes.html"));
+  });
 
-// Dependencies
-const path = require('path');
-
-module.exports = app => {
-    // Route to notes.html
-    app.get('/notes', (req, res) => {
-        res.sendFile(path.resolve('public/notes.html'));
-    });
-
-    // Route to index.html
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve('public/index.html'));
-    });
+  app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./public/index.html"));
+  });
 };
+
