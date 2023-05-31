@@ -52,6 +52,15 @@ const deleteNote = (id) =>
     },
   });
 
+  // A function for editing a note from the db
+const editNote = (id) =>
+fetch(`/api/notes/${id}`, {
+  method: "PUT",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
